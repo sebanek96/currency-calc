@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
+    background-image: url("../images/background.png");
 }
 
 *,
