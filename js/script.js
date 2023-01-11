@@ -4,44 +4,46 @@
     }
 
 
-    const resultElement = document.querySelector(".js-result");
-    const currencyElement = document.querySelector(".js-currency");
-    const amountElement = document.querySelector(".js-amount");
-    const formElement = document.querySelector(".js-form");
 
-    const rateEUR = 4.69;
-    const rateUSD = 4.36;
-    const rateGBP = 5.28;
+    const calculateResult = (currency) => {
 
-    formElement.addEventListener("submit", (event) => {
+        const rateEUR = 4.69;
+        const rateUSD = 4.36;
+        const rateGBP = 5.28;
+
+        switch (amount, currency) {
+            case "EUR":
+                return amount / rateEUR;
+
+            case "USD":
+                return amount / rateUSD;
+
+
+            case "GBP":
+                return amount / rateGBP;
+        }
+    };
+
+    const onFormSubmit = (event) => {
         event.preventDefault();
 
+        const resultElement = document.querySelector(".js-result");
+        const currencyElement = document.querySelector(".js-currency");
+        const amountElement = document.querySelector(".js-amount");
 
         const amount = +amountElement.value;
         const currency = currencyElement.value;
 
-        let result;
-
-        switch (currency) {
-            case "EUR":
-                result = amount / rateEUR;
-                break;
-
-            case "USD":
-                result = amount / rateUSD;
-                break;
-
-            case "GBP":
-                result = amount / rateGBP;
-                break;
-        }
-
-
-
+        const result = calculateResult(amount, currency);
 
         resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
-    });
-    welcome();
+    }
 
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
 
+        formElement.addEventListener("submit", onFormSubmit);
+        welcome();
+    }
+    init();
 }
