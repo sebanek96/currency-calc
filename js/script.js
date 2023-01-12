@@ -5,7 +5,7 @@
 
 
 
-    const calculateResult = (currency) => {
+    const calculateResult = (amount, currency) => {
 
         const rateEUR = 4.69;
         const rateUSD = 4.36;
