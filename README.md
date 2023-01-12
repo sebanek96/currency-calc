@@ -1,6 +1,6 @@
 # Sebastian Skarbek - Currency Calculator $$$
 
-![Webside](images/calcpgoto.png)
+![Webside](images/calcphoto.png)
 ## Demo 
 
 https://sebanek96.github.io/currency-calc/
@@ -11,6 +11,6 @@ Here is a simple currency calculator. It is calculating from my native PLN into 
 
 #### Languages and technologies
 
-*HTML
-*CSS
-*JavaScript
+* HTML
+* CSS
+* JavaScript
