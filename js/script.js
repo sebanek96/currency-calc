@@ -31,13 +31,14 @@
         const amount = +amountElement.value;
         const currency = currencyElement.value;
 
-        const resultText = () => {
-            const result = calculateResult(amount, currency);
-            resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
-        }
-        resultText();
-
     }
+
+    const resultText = (amount, currency) => {
+        const result = calculateResult(amount, currency);
+        resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
+    }
+
+    resultText(amount, currency);
 
     const init = () => {
         const formElement = document.querySelector(".js-form");
@@ -46,4 +47,5 @@
         welcome();
     }
     init();
+    
 }
