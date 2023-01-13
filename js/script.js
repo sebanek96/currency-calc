@@ -3,8 +3,6 @@
         console.log('Welcome to my currency converter')
     }
 
-
-
     const calculateResult = (amount, currency) => {
 
         const rateEUR = 4.69;
@@ -17,7 +15,6 @@
 
             case "USD":
                 return amount / rateUSD;
-
 
             case "GBP":
                 return amount / rateGBP;
@@ -34,9 +31,12 @@
         const amount = +amountElement.value;
         const currency = currencyElement.value;
 
-        const result = calculateResult(amount, currency);
+        const resultText = () => {
+            const result = calculateResult(amount, currency);
+            resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
+        }
+        resultText();
 
-        resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
     }
 
     const init = () => {
