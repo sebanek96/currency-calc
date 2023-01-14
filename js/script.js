@@ -24,21 +24,22 @@
     const onFormSubmit = (event) => {
         event.preventDefault();
 
-        const resultElement = document.querySelector(".js-result");
+        
         const currencyElement = document.querySelector(".js-currency");
         const amountElement = document.querySelector(".js-amount");
 
         const amount = +amountElement.value;
         const currency = currencyElement.value;
 
+        resultText(amount, currency,);
     }
 
     const resultText = (amount, currency) => {
+        const resultElement = document.querySelector(".js-result");
         const result = calculateResult(amount, currency);
         resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
-    }
 
-    resultText(amount, currency);
+    }
 
     const init = () => {
         const formElement = document.querySelector(".js-form");
@@ -47,5 +48,5 @@
         welcome();
     }
     init();
-    
+
 }
